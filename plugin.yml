@@ -1,0 +1,9 @@
+name: Roulette
+version: 1.0.0
+author: Terpz710
+api: 5.3.0
+main: terpz710\roulette\Roulette
+
+permissions:
+  roulette.cmd:
+    default: true

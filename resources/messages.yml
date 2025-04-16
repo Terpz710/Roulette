@@ -1,0 +1,30 @@
+# Made by Terpz710 :p
+
+# You may use & for color coding!
+
+# Message when the roulette task ends
+# {result} = Resulting color
+result-message: "The ball landed on &e{result}&f!"
+
+# Message displaying the amount of money the player has won
+# {win_amount} = Amount won
+win-message: "You won &a${win_amount}&f!"
+
+# Message telling the player they lost
+# {loss_amount} = Amount lost
+loss-message: "You lost &c${loss_amount}&f!"
+
+# Message when a player inputs a negative number or anything thats not a number
+invalid-amount: "&cAmount must be greater than 0!"
+
+# Message when the player inputs anything but red or black
+invalid-color: "Invalid color! Choose &ered&f or &eblack"
+
+# Message when a player doesnt have enough money
+# {balance} = The players balance
+not-enough-money: "You don't have enough money! Your current balance is &a${balance}"
+
+# Message when a player spins the wheel
+# {amount} = Amount inputed
+# {color} = Color you chose
+spin-wheel: "Spinning the wheel for &a${amount}&f on &e{color}..."
