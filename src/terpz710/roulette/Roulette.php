@@ -19,7 +19,6 @@ class Roulette extends PluginBase {
     }
 
     protected function onEnable() : void{
-        $this->saveDefaultConfig();
         $this->saveResource("messages.yml");
 
         if (!PacketHooker::isRegistered()) {
