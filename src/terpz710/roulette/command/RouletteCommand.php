@@ -60,7 +60,7 @@ class RouletteCommand extends BaseCommand {
             EconomyManager::getInstance()->reduceMoney($sender, $amount, function(bool $success) use ($sender, $amount, $color) {
                 if ($success) {
                     $config = new Config(Roulette::getInstance()->getDataFolder() . "messages.yml");
-                    $sender->sendMessage((string) new Messages($config, "spin-wheel" ["{amount}", "{color}"], [$amount, $color]));
+                    $sender->sendMessage((string) new Messages($config, "spin-wheel", ["{amount}", "{color}"], [$amount, $color]));
                     RouletteManager::spin($sender, $amount, $color);
                 } else {
                     $sender->sendMessage("§cFailed to deduct money from your account!");
