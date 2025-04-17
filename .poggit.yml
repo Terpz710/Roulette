@@ -10,5 +10,7 @@ projects:
          version: ^3.2.1
        - src: Terpz710/libMessages/libMessages
          version: ^1.0.0
+       - src: Terpz710/libEconomy/libEconomy
+         version: ^1.0.0
     lint: false
 ...
