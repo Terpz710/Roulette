@@ -27,4 +27,4 @@ not-enough-money: "You don't have enough money! Your current balance is &a${bala
 # Message when a player spins the wheel
 # {amount} = Amount inputed
 # {color} = Color you chose
-spin-wheel: "Spinning the wheel for &a${amount}&f on &e{color}..."
+spin-wheel: "Spinning the wheel for &a${amount}&f on &e{color}&f..."
