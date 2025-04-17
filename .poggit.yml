@@ -13,4 +13,5 @@ projects:
        - src: Terpz710/libEconomy/libEconomy
          version: ^1.0.0
     lint: false
+    icon: icon.png
 ...
