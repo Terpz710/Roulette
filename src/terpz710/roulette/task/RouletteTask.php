@@ -11,7 +11,8 @@ use pocketmine\player\Player;
 use pocketmine\utils\Config;
 
 use terpz710\roulette\Roulette;
-use terpz710\roulette\economy\EconomyManager;
+
+use terpz710\libeconomy\libEconomy;
 
 use terpz710\messages\Messages;
 
@@ -33,7 +34,7 @@ class RouletteTask extends Task {
 
         if (strtolower($this->choice) === $this->result) {
             $winAmount = $this->amount * 2;
-            EconomyManager::getInstance()->addMoney($this->player, $winAmount, function(bool $success) use ($winAmount) {
+            libEconomy::getInstance()->addMoney($this->player, $winAmount, function(bool $success) use ($winAmount) {
                 if ($success) {
                     $config = new Config(Roulette::getInstance()->getDataFolder() . "messages.yml");
                     $this->player->sendMessage((string) new Messages($config, "win-message", ["{win_amount}"], [$winAmount]));
