@@ -11,10 +11,11 @@ use pocketmine\player\Player;
 use pocketmine\utils\Config;
 
 use terpz710\roulette\Roulette;
-use terpz710\roulette\economy\EconomyManager;
 use terpz710\roulette\manager\RouletteManager;
 
 use terpz710\messages\Messages;
+
+use terpz710\libeconomy\libEconomy;
 
 use CortexPE\Commando\BaseCommand;
 use CortexPE\Commando\args\IntegerArgument;
@@ -50,14 +51,14 @@ class RouletteCommand extends BaseCommand {
             return;
         }
 
-        EconomyManager::getInstance()->getMoney($sender, function(float $balance) use ($sender, $amount, $color) {
+        libEconomy::getInstance()->getMoney($sender, function(float $balance) use ($sender, $amount, $color) {
             if ($balance < $amount) {
                 $config = new Config(Roulette::getInstance()->getDataFolder() . "messages.yml");
                 $sender->sendMessage((string) new Messages($config, "not-enough-money", ["{balance}"], [$balance]));
                 return;
             }
 
-            EconomyManager::getInstance()->reduceMoney($sender, $amount, function(bool $success) use ($sender, $amount, $color) {
+            libEconomy::getInstance()->reduceMoney($sender, $amount, function(bool $success) use ($sender, $amount, $color) {
                 if ($success) {
                     $config = new Config(Roulette::getInstance()->getDataFolder() . "messages.yml");
                     $sender->sendMessage((string) new Messages($config, "spin-wheel", ["{amount}", "{color}"], [$amount, $color]));
